@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+        
+<hibernate-mapping>
+
+	<class name="com.asdc.lrm.entity.ZykUserEntity" table="zyk_user">
+		<id name="userId">
+			<column name="userId" sql-type="varchar(100)"/>
+			<generator class="assigned" />
+		</id>
+		<property name="zykId" column="zykId" type="string" length="100" not-null="true"/>
+		<property name="username" column="Username" type="string" length="100" />
+		<property name="role" column="Role" type="string" length="100" />
+		<property name="email" column="email" type="string" length="100" />
+		<property name="telephone" column="telephone" type="string" length="100"/>
+		<property name="gender" column="gender" type="string" length="2" />
+		<property name="birthday" column="birthday" type="date" />
+		<property name="institute" column="institute" type="string" length="100" />
+		<property name="province" column="province" type="string" length="100" />
+		<property name="city" column="City" type="string" length="100" />
+		<property name="specialty" column="Specialty" type="string" length="100"/>
+		<property name="createdTime"><column name="createdTime" sql-type="datetime"></column></property>
+		<property name="modifiedTime"><column name="modifiedTime" sql-type="datetime"></column></property>
+	</class>
+
+</hibernate-mapping>

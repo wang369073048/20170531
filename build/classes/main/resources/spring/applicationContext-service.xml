@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="cacheUtil" class="com.asdc.lrm.util.CacheUtil"></bean>
+	
+	<bean id="loginService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.LoginServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+
+	<bean id="sysMenuService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.SysMenuServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="orgTreeService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.OrgTreeServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="groupService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.GroupServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+
+	<bean id="userService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.UserServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="roleService" parent="txProxyTemplate">
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.RoleServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="logService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.LogServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykCityService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykCityServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykCourseRresourceRelationService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykCourseRresourceRelationServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykCourseService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykCourseServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykLogService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykLogServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykQuestionbankService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykQuestionbankServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykResourceService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykResourceServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykUserService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykUserServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="reportConstructionService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ReportConstructionServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="reportApplicationService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ReportApplicationServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="reportUpdateService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ReportUpdateServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="reportBasicService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ReportBasicServiceImpl" autowire="byName">
+	    		<property name="allReportsExpireSeconds" value="${allreports.expire.seconds}"></property>
+	    	</bean>
+	    </property>
+	    
+	</bean>
+	
+	<bean id="reportSummaryService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ReportSummaryServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+	
+	<bean id="zykDatachangeLogService" parent="txProxyTemplate" >
+		<property name="target">
+	    	<bean class="com.asdc.lrm.service.impl.ZykDatachangeLogServiceImpl" autowire="byName"></bean>
+	    </property>
+	</bean>
+
+</beans>

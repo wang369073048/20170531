@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="report_basic" extends="interceptor" namespace="/report_basic">
+    	<action name="reportBasic" class="com.asdc.lrm.action.ReportBasicAction" method="reportBasic">
+	    	<result name="basic_1">/modules/statistics/basicReport/basic_1.jsp</result>
+	    	<result name="basic_2">/modules/statistics/basicReport/basic_2.jsp</result>
+	    	<result name="basic_3">/modules/statistics/basicReport/basic_3.jsp</result>
+        	<result name="success">/modules/statistics/basicReport/basic.jsp</result>
+        </action>
+    	
+        <action name="showAllReports" class="com.asdc.lrm.action.ReportBasicAction" method="showAllReports">
+        	<result name="success">/modules/statistics/basicReport/basicReport.jsp</result>
+        </action>
+        <action name="exportExcelBasicReport" class="com.asdc.lrm.action.ReportBasicAction" method="exportExcelBasicReport">
+        	<result name="success">/modules/statistics/basicReport/exportExcelBasicReport.jsp</result>
+        </action>
+        
+        <action name="sendReports" class="com.asdc.lrm.action.ReportBasicAction" method="sendReports"></action>
+    </package>
+</struts>

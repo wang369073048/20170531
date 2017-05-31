@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping>
+	<class name="com.asdc.lrm.entity.GroupEntity" table="lrm_groupinfo">
+		<id name="id">
+			<column name="ID" sql-type="bigint(11)"/>
+			<generator class="native" />
+		</id>
+		<property name="parentId"><column name="PARENT_ID" sql-type="bigint(11)" not-null="true"/></property>
+		<property name="groupName" column="GROUP_NAME" type="string" length="20" not-null="true"/>
+		<property name="sortNumber"><column name="SORT_NUMBER" sql-type="integer(5)" not-null="true"/></property>
+		<property name="createTime" column="CREATE_TIME" not-null="true"/>
+		<property name="creator"><column name="CREATOR" sql-type="bigint(11)" not-null="true"/></property>
+		<property name="updateUser"><column name="UPDATE_USER" sql-type="bigint(11)"/></property>
+		<property name="updateTime" column="UPDATE_TIME" />
+		<property name="deleteMark"><column name="DELETE_MARK" sql-type="integer(1)" not-null="true"/></property>
+		
+		<set name="userSet" table="lrm_usergroup" cascade="save-update">
+            <key><column name="GROUP_ID" sql-type="bigint(11)" not-null="true"></column></key>
+            <many-to-many class="com.asdc.lrm.entity.UserEntity"><column name="USER_ID" sql-type="bigint(11)"></column></many-to-many>
+        </set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" extends="struts-default" namespace="/">
+		<action name="login" class="com.asdc.lrm.action.LoginAction" method="login">
+            <result name="admin" type="redirect">/firstMenu.action</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        
+        <action name="firstMenu" class="com.asdc.lrm.action.LoginAction" method="firstMenu">
+            <result name="success">/main.jsp</result>
+        </action>
+
+        <action name="secondMenu" class="com.asdc.lrm.action.LoginAction" method="secondMenu">
+            <result name="success">/menu.jsp</result>
+            <result name="input" type="redirect">/login.jsp</result>
+        </action>
+    </package>
+    
+    <package name="logout" extends="struts-default" namespace="/">
+		<action name="logout" class="com.asdc.lrm.action.LoginAction" method="logout">
+            <result name="success" type="redirect">/login.jsp</result>
+        </action>
+    </package>
+</struts>

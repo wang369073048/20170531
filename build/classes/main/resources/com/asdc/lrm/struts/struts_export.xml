@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="export" extends="struts-default" namespace="/export">
+		<action name="download" class="com.asdc.lrm.action.DownLoadAction" method="exportExcel">
+			<result name="success" type="stream">
+             	 <param name="contentType">application/vnd.ms-excel</param>  
+				 <param name="contentDisposition">attachment;filename="${fileName}"</param>
+				 <param name="inputName">inputStream</param>    
+		    </result>
+        </action>
+        <action name="exportPDF" class="com.asdc.lrm.action.DownLoadAction" method="exportPDF">
+			<result name="success" type="stream">
+             	 <param name="contentType">application/pdf</param>  
+				 <param name="contentDisposition">attachment;filename="${fileName}"</param>
+				 <param name="inputName">inputStream</param>    
+		    </result>
+        </action>
+    </package>
+</struts>

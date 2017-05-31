@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+        
+<hibernate-mapping>
+
+	<class name="com.asdc.lrm.entity.ZykResourceEntity" table="zyk_resource">
+		<id name="resourceId">
+			<column name="resourceId" sql-type="varchar(100)"/>
+			<generator class="assigned" />
+		</id>
+		<property name="zykId" column="zykId" type="string" length="100" not-null="true"/>
+		<property name="title" column="Title" type="string" length="100" />
+		<property name="source" column="Source" type="string" length="100" />
+		<property name="specialty" column="Specialty" type="string" length="100" />
+		<property name="course" column="Course" type="string" length="100" />
+		<property name="knowledge" column="Knowledge" type="string" length="100" />
+		<property name="keywords" column="Keywords" type="string" length="100" />
+		<property name="subject" column="Subject" type="string" length="100" />
+		<property name="instruction" column="Instruction" type="string" length="100" />
+		<property name="mediaType" column="mediaType" type="string" length="100" />
+		<property name="language" column="language" type="string" length="100" />
+		<property name="fileFormat" column="fileFormat" type="string" length="100" />
+		<property name="filesize" column="Filesize" type="integer" length="100" />
+		<property name="modifiedTime"><column name="modifiedTime" sql-type="datetime"></column></property>
+		<property name="createdTime"><column name="createdTime" sql-type="datetime"></column></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+        
+<hibernate-mapping>
+
+	<class name="com.asdc.lrm.entity.ZykLogEntity" table="zyk_log">
+		<id name="logId">
+			<column name="logId" sql-type="varchar(100)"/>
+			<generator class="assigned" />
+		</id>
+		<property name="zykId" column="zykId" type="string" length="100" not-null="true"/>
+		<property name="time" column="Time" type="date" />
+		<property name="userId" column="Userid" type="string" length="100" />
+		<property name="ip" column="Ip" type="string" length="100" />
+		<property name="equipment" column="Equipment" type="string" length="100"/>
+		<property name="courseId" column="Courseid" type="string" length="100" />
+		<property name="objectType" column="ObjectType" type="string" length="100" />
+		<property name="objectId" column="ObjectId" type="string" length="100" />
+		<property name="action" column="Action" type="string" length="100" />
+	</class>
+
+</hibernate-mapping>

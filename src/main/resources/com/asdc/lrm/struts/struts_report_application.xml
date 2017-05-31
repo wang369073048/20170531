@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="report_application" extends="interceptor" namespace="/report_application">
+    	<!-- 用户行为概况 -->
+        <action name="reportUserData" class="com.asdc.lrm.action.ReportApplicationAction" method="reportUserData">
+        	<result name="success">/modules/statistics/application/report/reportUserData.jsp</result>
+        </action>
+        
+        <!-- 课程排次 -->
+        <action name="reportCourseCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportCourseCount">
+        	<result name="success">/modules/statistics/application/report/reportCourseCount.jsp</result>
+        </action>
+        
+         
+        <!-- 获取课程访问前三 -->
+        <action name="reportTopThreeCourseCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportTopThreeCourseCount">
+        	<result name="success">/modules/statistics/application/report/reportTopThreeCourseCount.jsp</result>
+        </action>
+        
+        <!-- 资源素材使用情况 -->
+        <action name="reportResourceCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportResourceCount">
+        	<result name="success">/modules/statistics/application/report/reportResourceCount.jsp</result>
+        </action>
+        
+        <!-- 资源素材应用情况 -->
+        <action name="reportResourceActionCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportResourceActionCount">
+        	<result name="success">/modules/statistics/application/report/reportResourceActionCount.jsp</result>
+        </action>
+        
+        
+          <!-- 资源素材浏览和下载频次(前三) -->
+        <action name="reportTopThreeResourceCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportTopThreeResourceCount">
+        	<result name="success">/modules/statistics/application/report/reportTopThreeResourceCount.jsp</result>
+        </action>
+        
+          <!-- 被使用的资源素材个数在全部资源素材的占比 -->
+        <action name="reportUsedResourceRatio" class="com.asdc.lrm.action.ReportApplicationAction" method="reportUsedResourceRatio">
+        	<result name="success">/modules/statistics/application/report/reportUsedResourceRatio.jsp</result>
+        </action>
+        
+        <!--  平均每个资源素材的使用次数 -->
+         <action name="reportUsedResourceAVG" class="com.asdc.lrm.action.ReportApplicationAction" method="reportUsedResourceAVG">
+        	<result name="success">/modules/statistics/application/report/reportUsedResourceAVG.jsp</result>
+        </action>
+    
+     	<!--  论坛活动模块统计 -->
+         <action name="reportForumActivedCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportForumActivedCount">
+        	<result name="success">/modules/statistics/application/report/reportForumActivedCount.jsp</result>
+        </action>
+        
+         <!--  作业活动模块统计 -->
+         <action name="reportWorkActivedCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportWorkActivedCount">
+        	<result name="success">/modules/statistics/application/report/reportWorkActivedCount.jsp</result>
+        </action>
+        
+         <!--  考试活动模块统计-->
+         <action name="reportExamActivedCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportExamActivedCount">
+        	<result name="success">/modules/statistics/application/report/reportExamActivedCount.jsp</result>
+        </action>
+		
+         <!-- 注册用户活动情况-->
+         <action name="reportActivedUserLogCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportActivedUserLogCount">
+        	<result name="success">/modules/statistics/application/report/reportActivedUserLogCount.jsp</result>
+        </action>
+			
+			
+		<!-- 人均活动天数-->
+         <action name="reportActivedDateUserAVG" class="com.asdc.lrm.action.ReportApplicationAction" method="reportActivedDateUserAVG">
+        	<result name="success">/modules/statistics/application/report/reportActivedDateUserAVG.jsp</result>
+        </action>
+        
+        <!-- 题库题目使用总次数-->
+         <action name="reportQuesUsingCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportQuesUsingCount">
+        	<result name="success">/modules/statistics/application/report/reportQuesUsingCount.jsp</result>
+        </action>
+        
+        <!-- 题库题目引用数-->
+         <action name="reportCitedquesCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportCitedquesCount">
+        	<result name="success">/modules/statistics/application/report/reportCitedquesCount.jsp</result>
+        </action>
+        
+          <!-- 用户活动总次数统计 -->
+        <action name="reportActivedUserCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportActivedUserCount">
+        	<result name="success">/modules/statistics/application/report/reportActivedUserCount.jsp</result>
+        </action>
+        
+          <!-- 用户累计学习天数 -->
+        <action name="reportAccumulatorUserDateCount" class="com.asdc.lrm.action.ReportApplicationAction" method="reportAccumulatorUserDateCount">
+        	<result name="success">/modules/statistics/application/report/reportAccumulatorUserDateCount.jsp</result>
+        </action>
+    </package>
+</struts>

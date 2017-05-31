@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+        
+<hibernate-mapping>
+
+	<class name="com.asdc.lrm.entity.ZykCourseEntity" table="zyk_course">
+		<id name="courseId">
+			<column name="courseId" sql-type="varchar(100)"/>
+			<generator class="assigned" />
+		</id>
+		<property name="zykId" column="zykId" type="string" length="100" not-null="true"/>
+		<property name="fullname" column="Fullname" type="string" length="100" />
+		<property name="specialty" column="Specialty" type="string" length="100" />
+		<property name="author" column="Author" type="string" length="100" />
+		<property name="courseType" column="courseType" type="string" length="100" />
+		<property name="courseLevel" column="courseLevel" type="string" length="100" />
+		<property name="Description" column="Description" type="string" length="1000" />
+		<property name="modifiedTime"><column name="modifiedTime" sql-type="datetime"></column></property>
+		<property name="createdTime"><column name="createdTime" sql-type="datetime"></column></property>
+	</class>
+
+</hibernate-mapping>

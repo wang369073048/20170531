@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="interceptor" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="authen" class="com.asdc.lrm.interceptor.LoginAuthenInterceptor" />
+			<interceptor-stack name="securityStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authen" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="securityStack"/>
+		
+		<global-results>
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+	</package>
+	
+	<include file="com/asdc/lrm/struts/struts_login.xml" />
+	<include file="com/asdc/lrm/struts/struts_sysMenu.xml" />
+	<include file="com/asdc/lrm/struts/struts_org.xml" />
+	<include file="com/asdc/lrm/struts/struts_role.xml"/>
+	<include file="com/asdc/lrm/struts/struts_log.xml"/>
+	
+	<include file="com/asdc/lrm/struts/struts_report_basic.xml"/>
+	<include file="com/asdc/lrm/struts/struts_report_summary.xml"/>
+	<include file="com/asdc/lrm/struts/struts_report_construction.xml"/>
+	<include file="com/asdc/lrm/struts/struts_report_application.xml"/>
+	<include file="com/asdc/lrm/struts/struts_report_update.xml"/>
+	
+	<include file="com/asdc/lrm/struts/struts_zyk.xml"/>
+	<include file="com/asdc/lrm/struts/struts_export.xml"/>
+</struts>

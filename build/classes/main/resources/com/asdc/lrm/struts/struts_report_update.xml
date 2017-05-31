@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="report_update" extends="interceptor" namespace="/report_update">
+		<action name="reportUserUpdate" class="com.asdc.lrm.action.ReportUpdateAction" method="reportUserUpdate">
+        	<result name="success">/modules/statistics/update/report/reportUserUpdate.jsp</result>
+        </action>
+        
+        <!-- 历年用户数据变化 -->
+		<action name="reportUserChange" class="com.asdc.lrm.action.ReportUpdateAction" method="reportUserChange">
+        	<result name="success">/modules/statistics/update/report/reportUserChange.jsp</result>
+        </action>
+        
+        <action name="reportCourseUpdate" class="com.asdc.lrm.action.ReportUpdateAction" method="reportCourseUpdate">
+        	<result name="success">/modules/statistics/update/report/reportCourseUpdate.jsp</result>
+        </action>
+        
+        <!-- 历年课程数据变化 -->
+        <action name="reportCourseChange" class="com.asdc.lrm.action.ReportUpdateAction" method="reportCourseChange">
+        	<result name="success">/modules/statistics/update/report/reportCourseChange.jsp</result>
+        </action>
+        
+        <action name="reportResourceLastYearUpdate" class="com.asdc.lrm.action.ReportUpdateAction" method="reportResourceLastYearUpdate">
+        	<result name="success">/modules/statistics/update/report/reportResourceLastYearUpdate.jsp</result>
+        </action>
+        
+        <action name="reportResourceTotalCountUpdate" class="com.asdc.lrm.action.ReportUpdateAction" method="reportResourceTotalCountUpdate">
+        	<result name="success">/modules/statistics/update/report/reportResourceTotalCountUpdate.jsp</result>
+        </action>
+        
+        <!-- 历年资源数据变化 -->
+        <action name="reportResourceChange" class="com.asdc.lrm.action.ReportUpdateAction" method="reportResourceChange">
+        	<result name="success">/modules/statistics/update/report/reportResourceChange.jsp</result>
+        </action>
+    </package>
+</struts>

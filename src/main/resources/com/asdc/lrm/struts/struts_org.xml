@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="orgTree" extends="interceptor" namespace="/orgTree">
+		<action name="findGroupFroTree" class="com.asdc.lrm.action.OrgTreeAction" method="findGroupFroTree" />
+		<action name="findGroupUserFroTree" class="com.asdc.lrm.action.OrgTreeAction" method="findGroupUserFroTree" />
+        <action name="findUserFroTree" class="com.asdc.lrm.action.OrgTreeAction" method="findUserFroTree" />
+	</package>
+    
+    <package name="group" extends="interceptor" namespace="/group">
+    	<action name="fingGroupGrid" class="com.asdc.lrm.action.GroupAction" method="fingGroupGrid" />
+    	<action name="groupCreate" class="com.asdc.lrm.action.GroupAction" method="groupCreate" />
+        
+        <action name="goUpdate" class="com.asdc.lrm.action.GroupAction" method="goUpdate">
+            <result name="success">/modules/org/groupUpdate.jsp</result>
+            <result name="input">/common/error.jsp</result>
+        </action>
+        
+        <action name="groupUpdate" class="com.asdc.lrm.action.GroupAction" method="groupUpdate" />
+        <action name="groupDelete" class="com.asdc.lrm.action.GroupAction" method="groupDelete" />
+    </package>
+    
+    <package name="user" extends="interceptor" namespace="/user">
+        <action name="findUserGrid" class="com.asdc.lrm.action.UserAction" method="findUserGrid" />
+        <action name="userCreate" class="com.asdc.lrm.action.UserAction" method="userCreate" />
+        
+        <action name="goUpdate" class="com.asdc.lrm.action.UserAction" method="goUpdate">
+            <result name="success">/modules/org/userUpdate.jsp</result>
+            <result name="input">/common/error.jsp</result>
+        </action>
+        
+        <action name="userUpdate" class="com.asdc.lrm.action.UserAction" method="userUpdate" />
+        <action name="userDelete" class="com.asdc.lrm.action.UserAction" method="userDelete" />
+        <action name="userImgDelete" class="com.asdc.lrm.action.UserAction" method="userImgDelete" />
+        <action name="checkLoginName" class="com.asdc.lrm.action.UserAction" method="checkLoginName" />
+        <action name="userPasswordUpdate" class="com.asdc.lrm.action.UserAction" method="userPasswordUpdate" />
+    </package>
+</struts>
